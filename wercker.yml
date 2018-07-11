@@ -21,4 +21,4 @@ build:
     - script:
         name: Execute sonarqube analyze process
         code: |
-          mvn sonar:sonar -Dsonar.host.url=http://129.213.138.94:8080
+          mvn sonar:sonar -Dsonar.host.url=$SONAR_URL
