@@ -26,4 +26,7 @@ build:
     - script:
         name: Get sonarqube analyze result
         code: |
-          curl -X GET -i 'http://129.213.138.94:8080/api/qualitygates/project_status?projectKey=com.oracle.microsvctk:demo' | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'
+          sonarResult = curl -X GET -i 'http://129.213.138.94:8080/api/qualitygates/project_status?projectKey=com.oracle.microsvctk:demo' | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'
+          if [ $sonarResult != "OK" ]; then
+            exit 1
+          fi
