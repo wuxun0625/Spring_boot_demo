@@ -17,3 +17,8 @@ build:
       goals: install
       cache_repo: true
       version: 3.5.2
+
+    - script:
+        name: ls
+        code: |
+          ls -l ./target
