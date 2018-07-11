@@ -26,7 +26,12 @@ build:
     - script:
         name: Get sonarqube analyze result
         code: |
-          sonarResult=`curl -X GET -i 'http://129.213.138.94:8080/api/qualitygates/project_status?projectKey=com.oracle.microsvctk:demo' | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'`
+          echo "Get Sonarqube analyze result..."
+          fullResult=`curl -X GET -i 'http://129.213.138.94:8080/api/qualitygates/project_status?projectKey=com.oracle.microsvctk:demo'`
+          echo "Sonarqube analyze full result is:"
+          echo $fullResult
+          sonarResult=`echo $fullResult | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'`
+          echo "Quality gate status is: $sonarResult"
           if [ $sonarResult != "OK" ]; then
             exit 1
           fi
