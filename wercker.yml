@@ -27,7 +27,7 @@ build:
         name: Get sonarqube analyze result
         code: |
           echo "Get Sonarqube analyze result..."
-          fullResult=`curl -X GET -i 'http://129.213.138.94:8080/api/qualitygates/project_status?projectKey=com.oracle.microsvctk:demo'`
+          fullResult=$(curl -X GET -i $SONAR_URL/api/qualitygates/project_status?projectKey=$SONAR_PROJECT_KEY)
           echo "Sonarqube analyze full result is:"
           echo $fullResult
           sonarResult=`echo $fullResult | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'`
