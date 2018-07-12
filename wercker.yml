@@ -35,7 +35,7 @@ build:
           if [ $sonarResult != "OK" ]; then
             exit 1
           fi
-#Build docker image and push to OCIR
+#Build docker image and push to OCIR.
 push-to-registry:
   steps:
     # Push to OCIR
