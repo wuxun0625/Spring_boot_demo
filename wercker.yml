@@ -35,3 +35,13 @@ build:
           if [ $sonarResult != "OK" ]; then
             exit 1
           fi
+#Build docker image and push to OCIR
+push-to-registry:
+  steps:
+    # Push to OCIR
+    - internal/docker-push:
+      username: $OCIR_USERNAME
+      password: $OCIR_PASSWORD
+      tag: MICROSVCTK-demo
+      repository: $OCIR_USERNAME/devops-microservice-toolkits
+      registry: https://iad.ocir.io/v2/
