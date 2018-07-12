@@ -42,6 +42,6 @@ push-to-registry:
     - internal/docker-push:
       username: $OCIR_USERNAME
       password: $OCIR_PASSWORD
-      tag: MICROSVCTK-demo
-      repository: /$OCIR_USERNAME/devops_microservice_toolkit
+      tag: microsvctk
+      repository: $OCIR_USERNAME/devops_microservice_toolkit
       registry: https://iad.ocir.io/v2/
