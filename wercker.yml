@@ -43,5 +43,5 @@ push-to-registry:
       username: $OCIR_USERNAME
       password: $OCIR_PASSWORD
       tag: MICROSVCTK-demo
-      repository: iad.ocir.io/oracle/devops-microservice-toolkit
+      repository: $OCIR_USERNAME/devops-microservice-toolkit
       registry: https://iad.ocir.io/v2/
