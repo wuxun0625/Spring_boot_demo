@@ -45,3 +45,4 @@ push-to-registry:
       tag: microsvctk
       repository: $OCIR_USERNAME/devops_microservice_toolkit
       registry: https://iad.ocir.io/v2/
+      entrypoint: java -jar /pipeline/source/target/demo-0.0.1-SNAPSHOT.jar
