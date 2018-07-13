@@ -27,6 +27,7 @@ build:
         name: Get sonarqube analyze result
         code: |
           echo "Get Sonarqube analyze result..."
+          pwd
           fullResult=$(curl -X GET -i $SONAR_URL/api/qualitygates/project_status?projectKey=$SONAR_PROJECT_KEY)
           echo "Sonarqube analyze full result is:"
           echo $fullResult
