@@ -45,4 +45,4 @@ push-to-registry:
       tag: $OCIR_TAG
       repository: $OCIR_USERNAME/$OCIR_REPOSITORY
       registry: https://iad.ocir.io/v2/
-      entrypoint: $OCIR_ENTRYPOINT
+      entrypoint: "$OCIR_ENTRYPOINT"
