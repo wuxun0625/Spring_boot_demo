@@ -46,7 +46,7 @@ push-to-registry:
       repository: $OCIR_USERNAME/$OCIR_REPOSITORY
       registry: https://iad.ocir.io/v2/
       entrypoint: java -jar /pipeline/source/target/demo-0.0.1-SNAPSHOT.jar
-#Provision Oracle kubernetes environment
+#Provision Oracle kubernetes engine environment
 provision-oke:
   steps:
     - wuxun0625/provision-oke:
