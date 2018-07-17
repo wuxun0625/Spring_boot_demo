@@ -3,12 +3,13 @@
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
 #box: openjdk:8-jdk
-box: oraclelinux:7.5
+#box: oraclelinux:7.5
 
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
+  box: openjdk:8-jdk
     # Steps make up the actions in your pipeline
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
@@ -38,6 +39,7 @@ build:
           fi
 #Build docker image and push to OCIR.
 push-to-registry:
+  box: oraclelinux:7.5
   steps:
     # Push to OCIR
     - internal/docker-push:
