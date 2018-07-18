@@ -49,13 +49,24 @@ push-to-registry:
       repository: $OCIR_USERNAME/$OCIR_REPOSITORY
       registry: https://iad.ocir.io/v2/
       entrypoint: java -jar /pipeline/source/target/demo-0.0.1-SNAPSHOT.jar
-#Provision Oracle kubernetes engine environment
+#Provision Oracle kubernetes engine environment.
 provision-oke:
   box: oraclelinux:7.5
   steps:
-    - wuxun0625/provision-oke:
+    - $WERCKER_USER/provision-oke:
         NAME_PREFIX:         $OKE_NAME_PREFIX
-        STORAGE_BUCKET_NAME: $OKE_STORAGE_BUCKET_NAME
+        USER_OCID:           $OKE_USER_OCID
+        FINGERPRINT:         $OKE_FINGERPRINT
+        API_KEY:             $OKE_API_KEY
+        TENANCY_OCID:        $OKE_TENANCY_OCID
+        REGION:              $OKE_REGION
+        COMPARTMENT_OCID:    $OKE_COMPARTMENT_OCID
+#Delete Oracle kubernetes engine environment.
+destroy-oke:
+  box: oraclelinux:7.5
+  steps:
+    - $WERCKER_USER/destroy-oke:
+        NAME_PREFIX:         $OKE_NAME_PREFIX
         USER_OCID:           $OKE_USER_OCID
         FINGERPRINT:         $OKE_FINGERPRINT
         API_KEY:             $OKE_API_KEY
