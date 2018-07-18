@@ -4,7 +4,7 @@
 # http://devcenter.wercker.com/docs/containers/index.html
 #box: openjdk:8-jdk
 #box: oraclelinux:7.5
-
+command-timeout: 60
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -52,7 +52,6 @@ push-to-registry:
 #Provision Oracle kubernetes engine environment.
 provision-oke:
   box: oraclelinux:7.5
-  command-timeout: 60
   steps:
     - wuxun0625/provision-oke:
         NAME_PREFIX:         $OKE_NAME_PREFIX
@@ -65,7 +64,6 @@ provision-oke:
 #Delete Oracle kubernetes engine environment.
 destroy-oke:
   box: oraclelinux:7.5
-  command-timeout: 60
   steps:
     - wuxun0625/destroy-oke:
         NAME_PREFIX:         $OKE_NAME_PREFIX
