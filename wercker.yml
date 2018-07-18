@@ -53,7 +53,7 @@ push-to-registry:
 provision-oke:
   box: oraclelinux:7.5
   steps:
-    - $WERCKER_USER/provision-oke:
+    - wuxun0625/provision-oke:
         NAME_PREFIX:         $OKE_NAME_PREFIX
         USER_OCID:           $OKE_USER_OCID
         FINGERPRINT:         $OKE_FINGERPRINT
@@ -65,7 +65,7 @@ provision-oke:
 destroy-oke:
   box: oraclelinux:7.5
   steps:
-    - $WERCKER_USER/destroy-oke:
+    - wuxun0625/destroy-oke:
         NAME_PREFIX:         $OKE_NAME_PREFIX
         USER_OCID:           $OKE_USER_OCID
         FINGERPRINT:         $OKE_FINGERPRINT
