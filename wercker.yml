@@ -61,7 +61,7 @@ provision-oke:
         TENANCY_OCID:        $OKE_TENANCY_OCID
         REGION:              $OKE_REGION
         COMPARTMENT_OCID:    $OKE_COMPARTMENT_OCID
-#Delete Oracle kubernetes engine environment.
+#Delete Oracle kubernetes engine environment
 destroy-oke:
   box: oraclelinux:7.5
   steps:
