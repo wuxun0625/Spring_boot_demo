@@ -4,7 +4,7 @@
 # http://devcenter.wercker.com/docs/containers/index.html
 #box: openjdk:8-jdk
 #box: oraclelinux:7.5
-command-timeout: 60
+
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
