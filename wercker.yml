@@ -47,7 +47,7 @@ push-to-registry:
       password: $OCIR_PASSWORD
       tag: $OCIR_TAG
       repository: $OCIR_USERNAME/$OCIR_REPOSITORY
-      registry: https://iad.ocir.io/v2/
+      registry: $OCIR_REGISTORY
       entrypoint: java -jar /pipeline/source/target/demo-0.0.1-SNAPSHOT.jar
 #Provision Oracle kubernetes engine environment.
 provision-oke:
