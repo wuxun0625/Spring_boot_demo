@@ -84,3 +84,11 @@ deploy-oke:
         API_KEY:             $OKE_API_KEY       
         TENANCY_OCID:        $OKE_TENANCY_OCID  
         REGION:              $OKE_REGION
+#Test step
+test:
+  box: oraclelinux:7.5
+  steps:
+    - script:
+        name: Get sonarqube analyze result
+        code: |
+          echo "Executeing test step..."
