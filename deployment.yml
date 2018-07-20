@@ -15,7 +15,7 @@ spec:
       containers:
       - name: microsvctk
     # enter the path to your image, be sure to include the correct region prefix    
-        image: phx.ocir.io/oraclekennguyen/oardc/devops_microservice_toolkit:microsvctk
+        image: iad.ocir.io/oraclekennguyen/oardc/devops_microservice_toolkit:microsvctk
         ports:
         - name: microsvctk-http
           containerPort: 8080
