@@ -28,7 +28,7 @@ build:
     - script:
         name: Get sonarqube analyze result
         code: |
-          for((i=1;i<=10;i++));
+          for((i=1;i<=$sonar_loop_cnt;i++));
           do
           sleep 2m
           echo "Get Sonarqube analyze result..."
