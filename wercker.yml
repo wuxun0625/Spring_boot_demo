@@ -36,11 +36,11 @@ build:
           echo "Sonarqube analyze full result is:"
           echo $fullResult
           sonarResult=`echo $fullResult | grep projectStatus | awk -F '"status":' '{print substr($2,2,2)}'`
-          if [ ! -n $sonarResult ]; then
+          if [ ! -z $sonarResult ]; then
             break
           fi
           done
-          if [ -n $sonarResult ]; then
+          if [ -z $sonarResult ]; then
             export sonarResult='NG'
           fi
           echo "Quality gate status is: $sonarResult"
