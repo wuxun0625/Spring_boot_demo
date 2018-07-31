@@ -24,7 +24,7 @@ build:
         name: Execute sonarqube analyze process
         code: |
           mvn sonar:sonar -Dsonar.host.url=$SONAR_URL > ./temp_output
-          SONAR_GET_REPORT_URL=`cat ./test.txt | grep "More about the report processing at " | awk -F 'at ' '{print substr($2,1)}'`
+          SONAR_GET_REPORT_URL=`cat ./temp_output | grep "More about the report processing at " | awk -F 'at ' '{print substr($2,1)}'`
           cat ./temp_output
           
     - script:
