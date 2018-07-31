@@ -24,8 +24,8 @@ build:
         name: Execute sonarqube analyze process
         code: |
           MVN_RESULT=`mvn sonar:sonar -Dsonar.host.url=$SONAR_URL`
-          SONAR_GET_REPORT_URL=`echo $MVN_RESULT | grep "More about the report processing at " | awk -F 'at ' '{print substr($2,1)}'`
-          echo $MVN_RESULT
+          #SONAR_GET_REPORT_URL=`echo $MVN_RESULT | grep "More about the report processing at " | awk -F 'at ' '{print substr($2,1)}'`
+          #echo $MVN_RESULT
           
     - script:
         name: Get sonarqube analyze result
